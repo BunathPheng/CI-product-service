@@ -53,6 +53,11 @@ public class ProductController extends BaseController {
         return "Hello World";
     }    
 
+    @GetMapping("/world")
+    public String helloWorld() {
+        return "World";
+    } 
+
     @PostMapping
     @Operation(summary = "Create a new product", description = "Accepts a product request payload and creates a new product. Returns the created product.")
     public ResponseEntity<ApiResponse<Product>> createProduct(@Valid @RequestBody ProductRequest productRequest) {
