@@ -46,17 +46,12 @@ public class ProductController extends BaseController {
                 .build();
         return response("Products matching name " + "'" + name + "'" + " fetched successfully", pagedResponseListProduct);
     }
-    @GetMapping("/search")
-    @Operation(summary = "Search products by name", description = "Returns a list of products that contain the given name (case-insensitive partial match).")
-    public ResponseEntity<ApiResponse<PagedResponseListProduct>> searchProduct(@RequestParam String name,
-                                                                    @RequestParam(defaultValue = "1") @Positive Integer page,
-                                                                    @RequestParam(defaultValue = "10") @Positive Integer size) {
-        PagedResponseListProduct pagedResponseListProduct = PagedResponseListProduct.builder()
-                .items(productService.searchProduct(page, size, name.trim()))
-                .paginationInfo(new PaginationInfo(page, size, productService.countSearchProducts(page,size,name.trim())))
-                .build();
-        return response("Products matching name " + "'" + name + "'" + " fetched successfully", pagedResponseListProduct);
-    }
+
+    
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "Hello World";
+    }    
 
     @PostMapping
     @Operation(summary = "Create a new product", description = "Accepts a product request payload and creates a new product. Returns the created product.")
