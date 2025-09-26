@@ -1,11 +1,12 @@
 spring:
   application:
-    name:
-      jpa-hibernate-02_homework
+    name: jpa-hibernate-02-homework
+
   datasource:
-    url: jdbc:postgresql://localhost:5435/product
-    password: 123
-    username: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://my-postgres-postgresql.my-namespace.svc.cluster.local:5432/mydb}
+    username: ${SPRING_DATASOURCE_USERNAME:myuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:mypassword}
+
   jpa:
     hibernate:
       ddl-auto: update
