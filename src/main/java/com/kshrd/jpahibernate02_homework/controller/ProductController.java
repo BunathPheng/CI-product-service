@@ -54,7 +54,7 @@ public class ProductController extends BaseController {
     }    
 
     @GetMapping("/world")
-    public String helloWorld() {
+    public String helloWorlds() {
         return "World";
     } 
 
