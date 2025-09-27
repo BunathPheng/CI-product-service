@@ -3,7 +3,7 @@ spring:
     name: jpa-hibernate-02-homework
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://my-postgres-postgresql.my-namespace.svc.cluster.local:5432/mydb}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://my-postgres-postgresql.my-app-namespace.svc.cluster.local:5432/mydb}
     username: ${SPRING_DATASOURCE_USERNAME:myuser}
     password: ${SPRING_DATASOURCE_PASSWORD:mypassword}
 
